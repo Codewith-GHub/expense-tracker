@@ -30,9 +30,9 @@ app.get('/api/health', (req, res) => {
 });
 
 // Routes get mounted here starting Checkpoint 5 (auth) and Checkpoint 6 (categories/transactions):
-// app.use('/api/auth', require('./routes/authRoutes'));
-// app.use('/api/categories', require('./routes/categoryRoutes'));
-// app.use('/api/transactions', require('./routes/transactionRoutes'));
+app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/categories', require('./routes/categoryRoutes'));
+app.use('/api/transactions', require('./routes/transactionRoutes'));
 
 // 404 handler for unknown routes
 app.use(notFound);
