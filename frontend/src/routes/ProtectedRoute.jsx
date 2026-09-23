@@ -1,6 +1,12 @@
-// TEMP: always allows access. Checkpoint 9 wires this to real auth state
-// (redirects to /login when there's no valid token).
+import { Navigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+
 function ProtectedRoute({ children }) {
+  const { isAuthenticated, loading } = useAuth();
+
+  if (loading) return <div className="page">Loading...</div>;
+  if (!isAuthenticated) return <Navigate to="/login" replace />;
+
   return children;
 }
 

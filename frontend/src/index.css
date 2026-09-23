@@ -38,3 +38,66 @@ body {
   margin: 2rem auto;
   padding: 0 1rem;
 }
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 360px;
+}
+
+.auth-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.auth-form input {
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.field-error {
+  color: #b3261e;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.form-error {
+  color: #b3261e;
+  font-size: 0.9rem;
+}
+
+.auth-form button {
+  padding: 0.6rem;
+  background: #1d9e75;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.auth-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.navbar-user {
+  margin-left: 1.5rem;
+  opacity: 0.85;
+}
+
+.navbar-logout {
+  margin-left: 1rem;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
