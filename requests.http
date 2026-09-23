@@ -1,0 +1,95 @@
+@baseUrl = http://localhost:5000/api
+
+### Register
+# @name register
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "Test User",
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+### Login
+# @name login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+### Get Me (protected)
+GET {{baseUrl}}/auth/me
+Authorization: Bearer {{login.response.body.$.data.token}}
+
+### Get Me — no token (should 401)
+GET {{baseUrl}}/auth/me
+
+### Create Category
+# @name createCategory
+POST {{baseUrl}}/categories
+Content-Type: application/json
+Authorization: Bearer {{login.response.body.$.data.token}}
+
+{
+  "name": "Groceries",
+  "type": "expense",
+  "color": "#D85A30"
+}
+
+### Get Categories
+GET {{baseUrl}}/categories
+Authorization: Bearer {{login.response.body.$.data.token}}
+
+### Create Transaction
+# @name createTransaction
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+Authorization: Bearer {{login.response.body.$.data.token}}
+
+{
+  "categoryId": "{{createCategory.response.body.$.data._id}}",
+  "amount": 42.50,
+  "description": "Weekly shop"
+}
+
+### Get Transactions
+GET {{baseUrl}}/transactions?page=1&limit=20
+Authorization: Bearer {{login.response.body.$.data.token}}
+
+### Get Dashboard Summary
+GET {{baseUrl}}/transactions/summary
+Authorization: Bearer {{login.response.body.$.data.token}}
+
+### Update Transaction
+PUT {{baseUrl}}/transactions/{{createTransaction.response.body.$.data._id}}
+Content-Type: application/json
+Authorization: Bearer {{login.response.body.$.data.token}}
+
+{
+  "amount": 50
+}
+
+### Update Category
+PUT {{baseUrl}}/categories/{{createCategory.response.body.$.data._id}}
+Content-Type: application/json
+Authorization: Bearer {{login.response.body.$.data.token}}
+
+{
+  "color": "#993C1D"
+}
+
+### Delete Transaction
+DELETE {{baseUrl}}/transactions/{{createTransaction.response.body.$.data._id}}
+Authorization: Bearer {{login.response.body.$.data.token}}
+
+### Delete Category (run after Delete Transaction above)
+DELETE {{baseUrl}}/categories/{{createCategory.response.body.$.data._id}}
+Authorization: Bearer {{login.response.body.$.data.token}}
+
+### Logout
+POST {{baseUrl}}/auth/logout
+Authorization: Bearer {{login.response.body.$.data.token}}
