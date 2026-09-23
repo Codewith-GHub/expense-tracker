@@ -101,3 +101,38 @@ body {
   border-radius: 6px;
   cursor: pointer;
 }
+
+.category-manager, .transaction-form { margin-bottom: 2rem; padding: 1.25rem; background: white; border-radius: 10px; }
+
+.category-form { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; }
+.category-form input { flex: 1; padding: 0.45rem 0.6rem; border: 1px solid #ccc; border-radius: 6px; }
+.category-form select { padding: 0.45rem; border: 1px solid #ccc; border-radius: 6px; }
+.category-form button { padding: 0.45rem 1rem; background: #1d9e75; color: white; border: none; border-radius: 6px; cursor: pointer; }
+
+.category-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.category-list li { display: flex; align-items: center; gap: 0.4rem; background: #f0efe9; padding: 0.3rem 0.6rem; border-radius: 999px; font-size: 0.9rem; }
+.category-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+.link-button { background: none; border: none; color: #1d6e9e; cursor: pointer; padding: 0; margin-left: 0.5rem; font-size: 0.85rem; text-decoration: underline; }
+
+.transaction-form { display: flex; flex-direction: column; gap: 0.9rem; max-width: 420px; }
+.transaction-form label { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.9rem; font-weight: 500; }
+.transaction-form input, .transaction-form select { padding: 0.5rem 0.65rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; }
+.transaction-form-actions { display: flex; gap: 0.6rem; }
+.transaction-form button[type="submit"] { padding: 0.6rem 1rem; background: #1d9e75; color: white; border: none; border-radius: 6px; cursor: pointer; }
+.secondary-button { padding: 0.6rem 1rem; background: transparent; border: 1px solid #999; border-radius: 6px; cursor: pointer; }
+
+.transaction-table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; }
+.transaction-table th, .transaction-table td { text-align: left; padding: 0.65rem 0.9rem; border-bottom: 1px solid #eee; }
+.amount-income { color: #1d9e75; font-weight: 600; }
+.amount-expense { color: #b3261e; font-weight: 600; }
+
+.summary-cards { display: flex; gap: 1rem; margin-bottom: 2rem; }
+.summary-card { flex: 1; padding: 1.25rem; border-radius: 10px; background: white; display: flex; flex-direction: column; gap: 0.4rem; }
+.summary-card span { font-size: 0.85rem; opacity: 0.7; }
+.summary-card strong { font-size: 1.6rem; }
+.summary-card.income strong { color: #1d9e75; }
+.summary-card.expense strong { color: #b3261e; }
+.summary-card.balance strong { color: #1a1a1a; }
+
+.chart-wrapper { background: white; padding: 1.25rem; border-radius: 10px; }
