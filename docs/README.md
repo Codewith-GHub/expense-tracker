@@ -1,3 +1,8 @@
+**Live app:** https://expense-tracker-xyz.vercel.app
+**API health check:** https://expense-tracker-api.onrender.com/api/health
+
+> Note: the backend is on a free tier and spins down after 15 minutes of inactivity — the first request after a while may take 30–60 seconds to respond.
+
 # Expense Tracker — MERN Stack
 
 A full-stack personal expense tracker with JWT authentication, protected REST APIs, and a category-based dashboard. Built with MongoDB, Express, React, and Node.
